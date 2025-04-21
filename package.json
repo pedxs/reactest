@@ -2,8 +2,10 @@
   "name": "reactest",
   "version": "1.0.0",
   "scripts": {
-    "build": "babel src --extensions \".jsx\" --out-file compiled.js",
-    "build:ts": "babel src/index.tsx --extensions \".tsx\" --out-file ts-compiled.js"
+    "build": "mkdir -p dist && babel src --extensions \".jsx\" --out-dir dist",
+    "build:ts": "mkdir -p dist && babel src --extensions \".tsx\" --out-dir dist",
+    "postbuild": "mkdir -p dist && cp *.html dist/",
+    "build:all": "npm run build && npm run build:ts && npm run postbuild"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
