@@ -1,0 +1,16 @@
+{
+  "name": "reactest",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "babel src --extensions \".jsx\" --out-file compiled.js",
+    "build:ts": "babel src/index.tsx --extensions \".tsx\" --out-file ts-compiled.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.21.0",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.0",
+    "typescript": "^5.0.4"
+  }
+}

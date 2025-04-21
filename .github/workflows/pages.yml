@@ -15,6 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build with Babel
+        run: npm run build
+      - name: Build TypeScript version
+        run: npm run build:ts
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
